@@ -3,7 +3,10 @@ module.exports = {
         "browser": true,
         "es6": true
     },
-    "extends": ["airbnb-typescript"],
+    "extends": [
+        "airbnb-typescript",
+        "airbnb/hooks",
+    ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
