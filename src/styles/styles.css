@@ -1,0 +1,18 @@
+.TaskManager {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+.TaskCreator {
+  background-color: red;
+  padding: 1%;
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.TaskList {
+  background-color: green;
+  width: 70%;
+}

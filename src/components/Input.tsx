@@ -3,13 +3,19 @@ import React, { useState } from 'react';
 interface IConfig {
   height?: number | string;
   width?: number | string;
+  name?: string;
   marginTop?: number | string;
   isTextArea?: boolean;
   placeholder?: string;
 }
 
 function Input({
-  height, width, isTextArea, marginTop, placeholder,
+  height,
+  width,
+  isTextArea,
+  marginTop,
+  placeholder,
+  name,
 }: IConfig) {
   const [text, setText] = useState<string>('');
 
@@ -23,11 +29,16 @@ function Input({
       ? (
         <textarea
           style={{
-            width: width || undefined,
+            width,
             height: height || 120,
             resize: 'none',
-            marginTop: marginTop || undefined,
+            marginTop,
+            // This 3 properties makes input and text area with same width.
+            WebkitBoxSizing: 'border-box',
+            MozBoxSizing: 'border-box',
+            boxSizing: 'border-box',
           }}
+          name={name}
           placeholder={placeholder}
           value={text}
           onChange={handleChange}
@@ -37,10 +48,14 @@ function Input({
       : (
         <input
           style={{
-            width: width || undefined,
-            height: height || undefined,
-            marginTop: marginTop || undefined,
+            width,
+            height,
+            marginTop,
+            WebkitBoxSizing: 'border-box',
+            MozBoxSizing: 'border-box',
+            boxSizing: 'border-box',
           }}
+          name={name}
           placeholder={placeholder}
           type="text"
           value={text}

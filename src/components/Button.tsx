@@ -2,11 +2,15 @@ import React from 'react';
 
 interface IButtonConfig {
   title?: string;
+  display?: string;
+  marginTop?: string | number;
 }
 
-function Button({ title }: IButtonConfig) {
+function Button({ title, display, marginTop }: IButtonConfig) {
   return (
-    <input type="submit" value={title} />
+
+    <input style={{ display, marginTop }} type="submit" value={title} />
+
   );
 }
 

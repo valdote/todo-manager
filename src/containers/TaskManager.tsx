@@ -1,15 +1,12 @@
 import React from 'react';
-import { TaskCreator } from '../components';
-import './styles.css';
-
+import { TaskCreator, TaskList } from '../components';
+import '../styles/styles.css';
 
 function TaskManager() {
   return (
-    <div>
+    <div className="TaskManager">
       <TaskCreator />
-      <div>
-        TaskList
-      </div>
+      <TaskList />
     </div>
   );
 }
