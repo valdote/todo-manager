@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface IConfig {
   height?: number | string;
@@ -7,6 +7,8 @@ interface IConfig {
   marginTop?: number | string;
   isTextArea?: boolean;
   placeholder?: string;
+  value: string;
+  onChange: (event: any) => void
 }
 
 function Input({
@@ -16,13 +18,9 @@ function Input({
   marginTop,
   placeholder,
   name,
+  value,
+  onChange,
 }: IConfig) {
-  const [text, setText] = useState<string>('');
-
-  function handleChange(event: any) {
-    setText(event.target.value);
-  }
-
   // Returns a textarea if isTextArea is eneabled otherwise returns an input.
   return (
     isTextArea
@@ -40,8 +38,8 @@ function Input({
           }}
           name={name}
           placeholder={placeholder}
-          value={text}
-          onChange={handleChange}
+          value={value}
+          onChange={onChange}
 
         />
       )
@@ -58,8 +56,8 @@ function Input({
           name={name}
           placeholder={placeholder}
           type="text"
-          value={text}
-          onChange={handleChange}
+          value={value}
+          onChange={onChange}
         />
       )
   );
