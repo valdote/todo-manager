@@ -1,65 +1,40 @@
 import React from 'react';
+import TextField from '@material-ui/core/TextField';
 
 interface IConfig {
-  height?: number | string;
-  width?: number | string;
   name?: string;
   marginTop?: number | string;
-  isTextArea?: boolean;
+  isMultiline?: boolean;
   placeholder?: string;
+  rows?: number;
   value: string;
-  onChange: (event: any) => void
+  onChange: (event: any) => void;
 }
 
 function Input({
-  height,
-  width,
-  isTextArea,
+  isMultiline,
   marginTop,
   placeholder,
   name,
   value,
+  rows,
   onChange,
 }: IConfig) {
-  // Returns a textarea if isTextArea is eneabled otherwise returns an input.
   return (
-    isTextArea
-      ? (
-        <textarea
-          style={{
-            width,
-            height: height || 120,
-            resize: 'none',
-            marginTop,
-            // This 3 properties makes input and text area with same width.
-            WebkitBoxSizing: 'border-box',
-            MozBoxSizing: 'border-box',
-            boxSizing: 'border-box',
-          }}
-          name={name}
-          placeholder={placeholder}
-          value={value}
-          onChange={onChange}
-
-        />
-      )
-      : (
-        <input
-          style={{
-            width,
-            height,
-            marginTop,
-            WebkitBoxSizing: 'border-box',
-            MozBoxSizing: 'border-box',
-            boxSizing: 'border-box',
-          }}
-          name={name}
-          placeholder={placeholder}
-          type="text"
-          value={value}
-          onChange={onChange}
-        />
-      )
+    <TextField
+      style={{
+        marginTop,
+        background: 'white',
+        borderRadius: 5,
+        padding: 5,
+      }}
+      multiline={isMultiline}
+      name={name}
+      onChange={onChange}
+      value={value}
+      placeholder={placeholder}
+      rows={rows}
+    />
   );
 }
 

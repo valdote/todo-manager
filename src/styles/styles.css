@@ -3,9 +3,9 @@
   min-height: 100vh;
 }
 .TaskCreator {
-  background-color: red;
+  background-color: #eeeeee;
   padding: 1%;
-  width: 20%;
+  width: 30%;
   min-width: 300px;
   display: flex;
   align-items: center;
@@ -14,6 +14,7 @@
 .TaskList {
   background-color: green;
   flex-grow: 1;
+  padding: 1%;
 }
 .TaskForm {
   width: 100%;

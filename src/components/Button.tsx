@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 interface IButtonConfig {
   title?: string;
@@ -6,12 +7,12 @@ interface IButtonConfig {
   marginTop?: string | number;
 }
 
-function Button({ title, display, marginTop }: IButtonConfig) {
+function MyButton({ title, marginTop }: IButtonConfig) {
   return (
-
-    <input style={{ display, marginTop }} type="submit" value={title} />
-
+    <Button style={{ marginTop }} type="submit" variant="contained" color="default">
+      {title}
+    </Button>
   );
 }
 
-export default Button;
+export default MyButton;
