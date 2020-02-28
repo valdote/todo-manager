@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import Button from './Button';
 import Input from './Input';
+import { ITask } from '../interfaces/interfaces';
 
-interface ITask {
-  title: string;
-  assignedTo: string;
-  description: string;
-}
 interface IProps {
   addToTaskList: (newTask: ITask) => void;
 }
@@ -40,6 +36,7 @@ function TaskCreator({ addToTaskList }: IProps) {
       title: event.target.taskTitle.value,
       assignedTo: event.target.assignedTo.value,
       description: event.target.taskDescription.value,
+      isCompleted: false,
     };
     addToTaskList(newTask);
     removeValues();
