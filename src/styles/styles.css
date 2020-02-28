@@ -3,7 +3,7 @@
   min-height: 100vh;
 }
 .TaskCreator {
-  background-color: #eeeeee;
+  background-color: #f0f5f9;
   padding: 1%;
   width: 30%;
   min-width: 300px;
@@ -12,7 +12,7 @@
   justify-content: center;
 }
 .TaskList {
-  background-color: green;
+  background-color: #c9d6df;
   flex-grow: 1;
   padding: 1%;
 }

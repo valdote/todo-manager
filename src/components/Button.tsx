@@ -5,6 +5,7 @@ interface IButtonConfig {
   title?: string;
   display?: string;
   marginTop?: string | number;
+  onClick?: () => void;
 }
 
 function MyButton({ title, marginTop }: IButtonConfig) {

@@ -57,6 +57,7 @@ function TaskCreator({ addToTaskList }: IProps) {
             marginTop="2%"
             name="taskTitle"
             placeholder="Task title"
+            required
           />
           <Input
             value={text.assignedTo}
@@ -64,6 +65,7 @@ function TaskCreator({ addToTaskList }: IProps) {
             marginTop="2%"
             name="assignedTo"
             placeholder="Asigned to:"
+            required
           />
           <Input
             value={text.taskDescription}
@@ -73,6 +75,7 @@ function TaskCreator({ addToTaskList }: IProps) {
             rows={4}
             isMultiline
             placeholder="Description"
+            required
           />
           <Button marginTop="2%" title="Add" />
         </form>

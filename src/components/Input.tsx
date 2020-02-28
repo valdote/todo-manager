@@ -8,6 +8,7 @@ interface IConfig {
   placeholder?: string;
   rows?: number;
   value: string;
+  required?: boolean;
   onChange: (event: any) => void;
 }
 
@@ -18,6 +19,7 @@ function Input({
   name,
   value,
   rows,
+  required,
   onChange,
 }: IConfig) {
   return (
@@ -34,6 +36,7 @@ function Input({
       value={value}
       placeholder={placeholder}
       rows={rows}
+      required={required}
     />
   );
 }
